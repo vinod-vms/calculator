@@ -34,7 +34,7 @@ const action = key.dataset.action;
 
 // In the beginning 0 is replaced by the textContent/innerHTML/innerText of the clicked key.
 
-if ((parseInt(display.textContent) === 0) && !action ) 
+if ((parseInt(display.textContent) === 0) && !action && (display.textContent.includes(".") === false) ) 
 {  display.textContent = key.textContent;
   }
 
@@ -55,7 +55,9 @@ else if (action && action !== 'calculate' && action !== 'decimal' && display.tex
     display_memory.innerHTML = storage[0];
 operator.push(action);
 // Populating the 'memory' section of the dispaly
+
 if (action === "add"){
+
 display_memory.innerHTML += ' ' + '&plus;';
 }
 else if (action === "multiply"){
